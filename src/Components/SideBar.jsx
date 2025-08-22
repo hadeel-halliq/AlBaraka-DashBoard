@@ -17,12 +17,11 @@ import SidebarHeader from "./SidebarHeader";
 export default function SideBar({ isOpen }) {
   const links = [
     { name: "الصفحة الرئيسية", icon: home, to: "/" },
-    { name: "إدارة المحتوى", icon: pen, to: "/dashboard/content" },
-    { name: "إدارة الصور", icon: img, to: "", counter: Frame1 },
-    { name: "إدارة الرسائل", icon: message, to: "", counter: Frame32 },
-    { name: "إدارة الخدمات", icon: services, to: "/dashboard/products", counter: Frame23 },
-    { name: "إدارة المراكز", icon: home, to: "", counter: Frame12 },
-    { name: "روابط التواصل", icon: contact, to: "", counter: Frame1 },
+    { name: "إدارة الخدمات", icon: services, to: "/products", counter: Frame23 },
+    { name: "إدارة الصور", icon: img, to: "/images", counter: Frame1 },
+    { name: "إدارة الرسائل", icon: message, to: "/messages", counter: Frame32 },
+    { name: "إدارة المراكز", icon: home, to: "/locations", counter: Frame12 },
+    { name: "روابط التواصل", icon: contact, to: "/social-links", counter: Frame1 },
   ];
   
   return (

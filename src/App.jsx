@@ -1,26 +1,36 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+
 import LogIn from "./Pages/LogIn/LogIn";
 import DashBoardLayout from "./MainLayout/DashBoardLayout";
-import ContentManagement from "./Pages/ContentManagement/ContentManagement";
-import ProductManagement from "./Pages/ProductManagement/ProductManagement"
-import ProtectedRoute from "./Components/ProtectedRoute"
+import Home from "./Pages/Home/Home";
+import Product from "./Pages/Product/Product";
+import Images from "./Pages/Images/Images";
+import Messages from "./Pages/Messages/Messages";
+import Locations from "./Pages/Locations/Locations";
+import SocialLinks from "./Pages/SocialLinks/SocialLinks";
+import ProtectedRoute from "./Components/ProtectedRoute";
+
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<LogIn />} />
+      <Route path="/login" element={<LogIn />} />
       <Route
-        path="/dashboard"
+        path="/"
         element={
           <ProtectedRoute>
             <DashBoardLayout />
           </ProtectedRoute>
         }
       >
-        <Route path="content" element={<ContentManagement />} />
-        <Route path="products" element={<ProductManagement />} />
+        <Route index element={<Navigate to="home" replace />} />
+        <Route path="home" element={<Home />} />
+        <Route path="products" element={<Product />} />
+        <Route path="images" element={<Images />}/>
+        <Route path="messages" element={<Messages />}/>
+        <Route path="locations" element={<Locations />}/>
+        <Route path="social-links" element={<SocialLinks />}/>
       </Route>
     </Routes>
   );
 }
-
 export default App;

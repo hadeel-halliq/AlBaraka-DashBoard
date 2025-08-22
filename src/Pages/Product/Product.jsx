@@ -19,21 +19,22 @@ const headers = [
 
 const rowData = ["-", "3", "1,35", "2,5", "1,25", "2", "6", "20 x 20"];
 
-export default function ProductManagement() {
+const cardData = [
+  { title: "مقاس", value: "20 x 20" },
+  { title: "الطول/متر", value: "6" },
+  { title: "السماكية/مم", value: "2" },
+  { title: "الوزن/كغ", value: "125" },
+  { title: "السماكية/مم", value: "25" },
+  { title: "الوزن/كغ", value: "135" },
+  { title: "السماكية/مم", value: "3" },
+  { title: "الوزن/كغ", value: "-" },
+];
+
+export default function Product() {
   useEffect(() => {
     document.title = "لوحة التحكم | إدراة المنتجات";
   }, []);
 
-  const cardData = [
-    { title: "مقاس", value: "20 x 20" },
-    { title: "الطول/متر", value: "6" },
-    { title: "السماكية/مم", value: "2" },
-    { title: "الوزن/كغ", value: "125" },
-    { title: "السماكية/مم", value: "25" },
-    { title: "الوزن/كغ", value: "135" },
-    { title: "السماكية/مم", value: "3" },
-    { title: "الوزن/كغ", value: "-" },
-  ];
 
   return (
     <div className="bg-[rgba(255,248,235,1)] min-h-screen">

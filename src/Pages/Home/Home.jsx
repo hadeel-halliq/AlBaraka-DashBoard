@@ -71,7 +71,7 @@ const messagesData = [
   { month: "كانون التاني", visitors: 480 },
 ];
 
-export default function ContentManagement() {
+export default function Home() {
 
   useEffect(() => {
         document.title = "لوحة التحكم | إدارة المحتوى"

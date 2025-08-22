@@ -23,7 +23,7 @@ export default function LogIn() {
   const handleLogIn = (values) => {
     if (values.username === "admin" && values.password === "1234") {
       localStorage.setItem("isAuthorized", "true");
-      navigate("/dashboard/content");
+      navigate("/home");
     } else {
       setIsPopupOpen(true);
     }
