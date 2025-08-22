@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { IoClose } from "react-icons/io5";
 import { HiExclamationCircle } from "react-icons/hi";
 
 export default function Popup({ isOpen, onClose }) {
@@ -65,10 +64,10 @@ export default function Popup({ isOpen, onClose }) {
                     boxShadow: "0 4px 12px rgba(239, 68, 68, 0.3)",
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-6 py-2 bg-gradient-to-r from-primary to-orange-300 text-white rounded-lg shadow-md transition-all cursor-pointer"
+                  className="px-6 py-2 bg-primary text-white rounded-lg shadow-md transition-all cursor-pointer"
                   onClick={onClose}
                 >
-                  <IoClose className="w-6 h-6" />
+                 إغلاق
                 </motion.button>
               </div>
             </motion.div>
