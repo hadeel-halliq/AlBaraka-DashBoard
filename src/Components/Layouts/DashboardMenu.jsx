@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 
 export default function DashboardMenu({ links }) {
-
-
-  
   return (
     <nav className="space-y-7">
       {links.map((link, index) => (
@@ -14,10 +11,14 @@ export default function DashboardMenu({ links }) {
             <div className="w-[24px]" />
           )}
           <div className="flex items-center gap-3">
-            <Link to={link.to} className="font-bold text-lg" >
+            <Link to={link.to} className="font-bold text-lg">
               {link.name}
             </Link>
-            {link.icon && <img src={link.icon} className="w-[24px]" />}
+            {link.isComponent ? (
+              <link.icon className="w-[24px] h-[24px]" />
+            ) : (
+              <img src={link.icon} className="w-[24px]" />
+            )}
           </div>
         </div>
       ))}

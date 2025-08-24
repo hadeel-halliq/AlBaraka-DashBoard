@@ -1,6 +1,6 @@
 import CardRow from "./CardRow";
-import pen from "../../../images/pen.png";
-import deletIcon from "../../../images/deletIcon.png";
+import pen from "../../images/pen.png";
+import deletIcon from "../../images/deletIcon.png";
 
 export default function Card({ data }) {
   return (

@@ -3,7 +3,7 @@ import searchIcon from "../../images/searchIcon.png";
 import pen from "../../images/pen.png";
 import deletIcon from "../../images/deletIcon.png";
 
-import Card from "./Components/Card";
+import Card from "../../Components/Customs/Card";
 
 const headers = [
   "الإجراءات",
@@ -35,11 +35,9 @@ export default function Product() {
     document.title = "لوحة التحكم | إدراة المنتجات";
   }, []);
 
-
   return (
     <div className="bg-[rgba(255,248,235,1)] min-h-screen">
       <div className="container mx-auto px-6 overflow-hidden">
-       
         <div className="flex justify-between my-4">
           <button className="w-44 bg-primary text-white font-bold py-2 rounded-2xl cursor-pointer">
             إضافة محتوى جديد+
@@ -100,7 +98,6 @@ export default function Product() {
           </table>
         </div>
 
-      
         <div className="block md:hidden space-y-4 my-10">
           {Array.from({ length: 10 }, (_, rowIndex) => (
             <Card key={rowIndex} data={cardData} />

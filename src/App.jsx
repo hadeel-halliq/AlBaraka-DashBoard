@@ -8,7 +8,8 @@ import Images from "./Pages/Images/Images";
 import Messages from "./Pages/Messages/Messages";
 import Locations from "./Pages/Locations/Locations";
 import SocialLinks from "./Pages/SocialLinks/SocialLinks";
-import ProtectedRoute from "./Components/ProtectedRoute";
+import Services from "./Pages/Services/Services";
+import ProtectedRoute from "./Components/Layouts/ProtectedRoute";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="images" element={<Images />}/>
         <Route path="messages" element={<Messages />}/>
         <Route path="locations" element={<Locations />}/>
+        <Route path="services" element={<Services/>}/>
         <Route path="social-links" element={<SocialLinks />}/>
       </Route>
     </Routes>
