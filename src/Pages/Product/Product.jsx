@@ -75,7 +75,7 @@ export default function Product() {
               {Array.from({ length: 10 }, (_, rowIndex) => (
                 <tr
                   key={rowIndex}
-                  className="border-b-[1px] border-[rgba(250,177,71,1)]"
+                  className="border-b-[1px] border-[rgba(250,177,71,1)] bg-white"
                 >
                   <td className="px-4 py-2">
                     <div className="flex justify-center gap-3">
