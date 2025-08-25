@@ -22,7 +22,7 @@ export default function Table({ headers, data }) {
         <thead>
           <tr className="bg-[rgba(250,177,71,1)] text-white">
             {headers.map((header, i) => (
-              <th key={i} className="bg-[rgba(250,177,71,1)] text-white">
+              <th key={i} className="bg-[rgba(250,177,71,1)] text-white py-6">
                 {header.label}
               </th>
             ))}
