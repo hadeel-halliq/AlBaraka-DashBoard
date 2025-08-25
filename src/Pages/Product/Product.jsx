@@ -1,23 +1,82 @@
 import { useEffect } from "react";
 import searchIcon from "../../images/searchIcon.png";
-import pen from "../../images/pen.png";
-import deletIcon from "../../images/deletIcon.png";
-
 import Card from "../../Components/Customs/Card";
+import Table from "../../Components/Customs/Table";
 
 const headers = [
-  "الإجراءات",
-  "الوزن/كغ",
-  "السماكية/مم",
-  "الوزن/كغ",
-  "السماكية/مم",
-  "الوزن/كغ",
-  "السماكية/مم",
-  "الطول/متر",
-  "مقاس",
+  { key: "actions", label: "الإجراءات" },
+  { key: "weight1", label: "الوزن/كغ" },
+  { key: "thickness1", label: "السماكية/مم" },
+  { key: "weight2", label: "الوزن/كغ" },
+  { key: "thickness2", label: "السماكية/مم" },
+  { key: "weight3", label: "الوزن/كغ" },
+  { key: "thickness3", label: "السماكية/مم" },
+  { key: "length", label: "الطول/متر" },
+  { key: "size", label: "مقاس" },
 ];
 
-const rowData = ["-", "3", "1,35", "2,5", "1,25", "2", "6", "20 x 20"];
+const data = [
+  {
+    weight1: "-",
+    thickness1: "3",
+    weight2: "1,35",
+    thickness2: "2,5",
+    weight3: "1,25",
+    thickness3: "2",
+    length: "6",
+    size: "20 x 20",
+  },
+  {
+    weight1: "-",
+    thickness1: "3",
+    weight2: "1,35",
+    thickness2: "2,5",
+    weight3: "1,25",
+    thickness3: "2",
+    length: "6",
+    size: "20 x 20",
+  },
+  {
+    weight1: "-",
+    thickness1: "3",
+    weight2: "1,35",
+    thickness2: "2,5",
+    weight3: "1,25",
+    thickness3: "2",
+    length: "6",
+    size: "20 x 20",
+  },
+  {
+    weight1: "-",
+    thickness1: "3",
+    weight2: "1,35",
+    thickness2: "2,5",
+    weight3: "1,25",
+    thickness3: "2",
+    length: "6",
+    size: "20 x 20",
+  },
+  {
+    weight1: "-",
+    thickness1: "3",
+    weight2: "1,35",
+    thickness2: "2,5",
+    weight3: "1,25",
+    thickness3: "2",
+    length: "6",
+    size: "20 x 20",
+  },
+  {
+    weight1: "-",
+    thickness1: "3",
+    weight2: "1,35",
+    thickness2: "2,5",
+    weight3: "1,25",
+    thickness3: "2",
+    length: "6",
+    size: "20 x 20",
+  },
+];
 
 const cardData = [
   { title: "مقاس", value: "20 x 20" },
@@ -58,44 +117,7 @@ export default function Product() {
         </div>
 
         <div className="overflow-x-auto hidden md:block rounded-3xl mt-10">
-          <table className="min-w-[900px] table-auto border-collapse w-full text-center border-l-[1px] border-r-[1px] border-[rgba(250,177,71,1)]">
-            <thead>
-              <tr className="bg-[rgba(250,177,71,1)] text-white">
-                {headers.map((title, i) => (
-                  <th
-                    key={i}
-                    className="px-4 py-2 border-b-[1px] border-[rgba(250,177,71,1)]"
-                  >
-                    {title}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {Array.from({ length: 10 }, (_, rowIndex) => (
-                <tr
-                  key={rowIndex}
-                  className="border-b-[1px] border-[rgba(250,177,71,1)] bg-white"
-                >
-                  <td className="px-4 py-2">
-                    <div className="flex justify-center gap-3">
-                      <button className="w-5">
-                        <img src={pen} alt="edit" />
-                      </button>
-                      <button className="text-[rgba(73,65,58,1)] w-5">
-                        <img src={deletIcon} alt="delete" />
-                      </button>
-                    </div>
-                  </td>
-                  {rowData.map((value, colIndex) => (
-                    <td key={colIndex} className="px-4 py-2">
-                      {value}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <Table headers={headers} data={data}/>
         </div>
 
         <div className="block md:hidden space-y-4 my-10">

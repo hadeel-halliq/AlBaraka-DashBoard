@@ -6,7 +6,7 @@ export default function Card({ data }) {
   return (
     <div className="rounded-lg p-4 shadow-sm bg-white border-l-[2px] border-r-[2px] border-[rgba(250,177,71,1)]">
       {data.map((item, i) => (
-        <CardRow key={i} title={item.title} value={item.value} />
+        <CardRow key={i} title={item.title} value={item.value} headerKey={item.header}/>
       ))}
 
       <div className="flex flex-row-reverse justify-between items-center mt-3">

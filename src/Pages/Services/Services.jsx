@@ -45,6 +45,24 @@ const servicesData = [
     equipment: "-",
     stage: "تسليم",
   },
+  {
+    service: "2التسليم النهائي",
+    description: "تغليف وتوصيل المنتج مع ضمان",
+    equipment: "-",
+    stage: "تسليم",
+  },
+  {
+    service: "3التسليم النهائي",
+    description: "تغليف وتوصيل المنتج مع ضمان",
+    equipment: "-",
+    stage: "تسليم",
+  },
+  {
+    service: "4التسليم النهائي",
+    description: "تغليف وتوصيل المنتج مع ضمان",
+    equipment: "-",
+    stage: "تسليم",
+  },
 ];
 
 export default function Services() {
