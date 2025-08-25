@@ -9,7 +9,6 @@ const contactHeaders = [
   { label: "نوع التواصل", key: "type" },
 ];
 
-
 const contactData = [
   {
     type: "زيارتنا",
@@ -54,16 +53,16 @@ export default function SocialLinks() {
         </div>
         <div className="block md:hidden space-y-4 my-10">
           {contactData.map((row, index) => {
-            const cardData = contactHeaders
-              .filter((header) => header.key !== "actions")
-              .map((header) => ({
+            const cardData = cardOrder.map((key) => {
+              const header = contactHeaders.find((h) => h.key === key);
+              return {
                 header: header.key,
                 title: header.label,
                 value: row[header.key],
-              }));
+              };
+            });
             return <Card key={index} data={cardData} />;
           })}
-          
         </div>
       </div>
     </div>
