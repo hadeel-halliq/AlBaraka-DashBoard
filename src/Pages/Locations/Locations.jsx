@@ -42,7 +42,7 @@ const data = [
   {
     address: "دمشق، ساحة الأمويين",
     workHours: "9:00 صباحاً - 5:00 مساءً (السبت - الخميس)",
-    link: "tel:+963944555111",
+    link:"tel:+963948888330",
     linkText: "https://www.google.com/maps/@33.5141,36.2765,14z?hl=ar",
     manager: "أحمد الأحمد",
   },
