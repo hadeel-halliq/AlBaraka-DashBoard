@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import searchIcon from "../../images/searchIcon.png";
-import Card from "../../Components/Customs/Card";
 import Table from "../../Components/Customs/Table";
+import CardList from "../../Components/Customs/CardList";
 
 const headers = [
   { key: "actions", label: "الإجراءات" },
@@ -77,19 +77,21 @@ const data = [
     size: "20 x 20",
   },
 ];
-
-const cardData = [
-  { title: "مقاس", value: "20 x 20" },
-  { title: "الطول/متر", value: "6" },
-  { title: "السماكية/مم", value: "2" },
-  { title: "الوزن/كغ", value: "125" },
-  { title: "السماكية/مم", value: "25" },
-  { title: "الوزن/كغ", value: "135" },
-  { title: "السماكية/مم", value: "3" },
-  { title: "الوزن/كغ", value: "-" },
+const cardOrder = [
+  "size",
+  "length",
+  "thickness3",
+  "weight3",
+  "thickness2",
+  "weight2",
+  "thickness1",
+  "weight1"
 ];
 
 export default function Product() {
+
+  const [filter, setfilter] = useState()
+
   useEffect(() => {
     document.title = "لوحة التحكم | إدراة المنتجات";
   }, []);
@@ -97,7 +99,7 @@ export default function Product() {
   return (
     <div className="bg-[rgba(255,248,235,1)] min-h-screen">
       <div className="container mx-auto px-6 overflow-hidden">
-        <div className="flex justify-between my-4">
+        <div className="flex flex-col-reverse gap-4  items-center sm:flex sm:flex-row sm:justify-between my-4">
           <button className="w-44 bg-primary text-white font-bold py-2 rounded-2xl cursor-pointer">
             إضافة محتوى جديد+
           </button>
@@ -108,6 +110,8 @@ export default function Product() {
               className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4"
             />
             <input
+              value={filter}
+              onChange={(e) => setfilter(e.target.value)}
               type="text"
               placeholder="ابحث عن محتوى ..."
               className="w-full border-[1px] border-primary pr-8 pl-2 py-1 rounded-2xl focus:outline-none focus:border-primary focus:border-2"
@@ -119,12 +123,7 @@ export default function Product() {
         <div className="overflow-x-auto hidden md:block rounded-3xl mt-10">
           <Table headers={headers} data={data}/>
         </div>
-
-        <div className="block md:hidden space-y-4 my-10">
-          {Array.from({ length: 10 }, (_, rowIndex) => (
-            <Card key={rowIndex} data={cardData} />
-          ))}
-        </div>
+        <CardList headers={headers} data={data} order={cardOrder}/>
       </div>
     </div>
   );

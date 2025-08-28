@@ -9,7 +9,7 @@ import Messages from "./Pages/Messages/Messages";
 import Locations from "./Pages/Locations/Locations";
 import SocialLinks from "./Pages/SocialLinks/SocialLinks";
 import Services from "./Pages/Services/Services";
-import ProtectedRoute from "./Components/Layouts/ProtectedRoute";
+import ProtectedRoute from "./Routes/ProtectedRoute";
 
 function App() {
   return (

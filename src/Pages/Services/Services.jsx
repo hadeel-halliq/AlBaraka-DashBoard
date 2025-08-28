@@ -1,5 +1,7 @@
 import Table from "../../Components/Customs/Table";
 import Card from "../../Components/Customs/Card";
+import CardList from "../../Components/Customs/CardList";
+import { useEffect } from "react";
 
 const headers = [
   { label: "الإجراءات", key: "actions" },
@@ -65,25 +67,21 @@ const servicesData = [
   },
 ];
 
+const cardOrder = ["service", "description", "equipment", "stage"];
+
 export default function Services() {
+
+  useEffect(() => {
+    document.title = "لوحة التحكم | إدارة الخدمات";
+  }, []);
+
   return (
     <div className="bg-[rgba(255,248,235,1)] min-h-screen">
       <div className="container mx-auto px-6 overflow-hidden">
         <div className="overflow-x-auto hidden md:block rounded-3xl mt-10">
           <Table headers={headers} data={servicesData} />
         </div>
-        <div className="block md:hidden space-y-4 my-10">
-          {servicesData.map((row, index) => {
-            const cardData = headers
-              .filter((header) => header.key !== "actions")
-              .map((header) => ({
-                title: header.label,
-                value: row[header.key],
-              }));
-
-            return <Card key={index} data={cardData} />;
-          })}
-        </div>
+        <CardList headers={headers} data={servicesData} order={cardOrder} />
       </div>
     </div>
   );
