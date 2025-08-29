@@ -85,14 +85,14 @@ const cardOrder = [
   "thickness2",
   "weight2",
   "thickness1",
-  "weight1"
+  "weight1",
 ];
 
 export default function Product() {
 
-  const [filter, setfilter] = useState()
 
-  useEffect(() => {
+
+    useEffect(() => {
     document.title = "لوحة التحكم | إدراة المنتجات";
   }, []);
 
@@ -110,8 +110,6 @@ export default function Product() {
               className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4"
             />
             <input
-              value={filter}
-              onChange={(e) => setfilter(e.target.value)}
               type="text"
               placeholder="ابحث عن محتوى ..."
               className="w-full border-[1px] border-primary pr-8 pl-2 py-1 rounded-2xl focus:outline-none focus:border-primary focus:border-2"
@@ -121,9 +119,9 @@ export default function Product() {
         </div>
 
         <div className="overflow-x-auto hidden md:block rounded-3xl mt-10">
-          <Table headers={headers} data={data}/>
+          <Table headers={headers} data={data} />
         </div>
-        <CardList headers={headers} data={data} order={cardOrder}/>
+        <CardList headers={headers} data={data} order={cardOrder} />
       </div>
     </div>
   );

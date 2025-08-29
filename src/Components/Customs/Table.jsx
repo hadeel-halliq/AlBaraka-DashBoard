@@ -60,7 +60,7 @@ export default function Table({ headers, data }) {
         </thead>
         <tbody>
           {currentRows.map((row, rowIndex) => {
-            const globalIndex = indexOfFirstRow + rowIndex; // ❗ مهم: الفهرس العالمي لكل صف
+            const globalIndex = indexOfFirstRow + rowIndex;
 
             return (
               <tr
