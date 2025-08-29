@@ -8,6 +8,7 @@ export default function Table({ headers, data }) {
   const [editingIndex, setEditingIndex] = useState(null);
   const [editedRow, setEditedRow] = useState({});
 
+  // الباجينيشن
   const rowsPerPage = 5;
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
@@ -20,15 +21,20 @@ export default function Table({ headers, data }) {
   const handleIncrement = () => {
     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   };
+
+  // حذف صف
   const handleDelete = (rowIndex) => {
     const globalIndex = indexOfFirstRow + rowIndex;
     setTableData((prev) => prev.filter((_, i) => i !== globalIndex));
   };
+
+  // بدء التعديل
   const handleEdit = (row, rowIndex) => {
     const globalIndex = indexOfFirstRow + rowIndex;
     setEditingIndex(globalIndex);
     setEditedRow(row);
   };
+  // حفظ التعديلات
   const handleSave = () => {
     setTableData((prev) =>
       prev.map((r, i) => (i === editingIndex ? editedRow : r))
@@ -36,7 +42,7 @@ export default function Table({ headers, data }) {
     setEditingIndex(null);
     setEditedRow({});
   };
-
+  // إلغاء التعديل
   const handleCancel = () => {
     setEditingIndex(null);
     setEditedRow({});

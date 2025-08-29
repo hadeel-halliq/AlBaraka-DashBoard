@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import searchIcon from "../../images/searchIcon.png";
 import Table from "../../Components/Customs/Table";
 import CardList from "../../Components/Customs/CardList";
