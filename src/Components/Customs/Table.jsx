@@ -48,6 +48,7 @@ export default function Table({ headers, data }) {
     setEditedRow({});
   };
 
+  // لما يصير تعديل على الداتا بسبب الفترة في صفحة الرسائل
   useEffect(() => {
     setTableData(data);
   }, [data]);

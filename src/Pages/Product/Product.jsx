@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import searchIcon from "../../images/searchIcon.png";
 import Table from "../../Components/Customs/Table";
 import CardList from "../../Components/Customs/CardList";
@@ -89,10 +89,9 @@ const cardOrder = [
 ];
 
 export default function Product() {
+  const [newEditingRowIndex, setNewEditingRowIndex] = useState(null);
 
-
-
-    useEffect(() => {
+  useEffect(() => {
     document.title = "لوحة التحكم | إدراة المنتجات";
   }, []);
 
